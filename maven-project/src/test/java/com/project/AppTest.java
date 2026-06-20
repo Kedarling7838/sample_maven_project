@@ -1,38 +1,25 @@
 package com.project;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+public class AppTest {
+
+    @Test
+    public void testLogin1() {
+        App myApp = new App();
+        Assert.assertEquals(0, myApp.userLogin("abc", "abc123"));
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    public void testLogin2() {
+        App myApp = new App();
+        Assert.assertEquals(1, myApp.userLogin("abc", "abc@123"));
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @Test
+    public void testLogin3() {
+        App myApp = new App();
+        Assert.assertEquals(0, myApp.userLogin("abc", "abc@1234"));
     }
 }
