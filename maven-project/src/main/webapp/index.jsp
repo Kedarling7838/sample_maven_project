@@ -1,3 +1,4 @@
+```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -8,76 +9,71 @@
 <title>Sample Maven Web Application</title>
 
 <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f4f4;
-        margin: 0;
-        padding: 0;
+    body{
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+        background:#f5f7fa;
     }
-
-    .container {
-        width: 80%;
-        margin: 50px auto;
-        background: #ffffff;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    .container{
+        width:80%;
+        margin:40px auto;
+        background:#fff;
+        padding:30px;
+        border-radius:10px;
+        box-shadow:0 0 15px rgba(0,0,0,0.15);
     }
-
-    h1 {
-        color: #2c3e50;
-        text-align: center;
+    h1{
+        color:#2c3e50;
+        text-align:center;
     }
-
-    h2 {
-        color: #16a085;
+    h2{
+        color:#0077b6;
+        border-bottom:2px solid #ddd;
+        padding-bottom:5px;
     }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
+    table{
+        width:100%;
+        border-collapse:collapse;
+        margin-top:15px;
     }
-
-    table, th, td {
-        border: 1px solid #ddd;
+    table, th, td{
+        border:1px solid #ccc;
     }
-
-    th {
-        background-color: #3498db;
-        color: white;
-        padding: 10px;
+    th{
+        background:#0077b6;
+        color:white;
+        padding:10px;
     }
-
-    td {
-        padding: 10px;
+    td{
+        padding:10px;
     }
-
-    .footer {
-        text-align: center;
-        margin-top: 30px;
-        color: #777;
+    .success{
+        color:green;
+        font-size:18px;
+        font-weight:bold;
+        text-align:center;
     }
-
-    .success {
-        color: green;
-        font-weight: bold;
+    .footer{
+        margin-top:30px;
+        text-align:center;
+        color:#666;
+        font-size:14px;
     }
 </style>
 
 </head>
-
 <body>
 
 <div class="container">
 
-    <h1>🚀 Welcome to Sample Maven Web Application</h1>
+    <h1>🚀 Maven Web Application</h1>
 
     <p class="success">
-        Congratulations! Your JSP application is running successfully.
+        Application deployed successfully on Apache Tomcat!
     </p>
 
-    <h2>Project Information</h2>
+    <h2>Application Details</h2>
 
     <table>
         <tr>
@@ -86,57 +82,76 @@
         </tr>
         <tr>
             <td>Application Name</td>
-            <td>Sample Maven Project</td>
+            <td>Sample Maven Web Application</td>
         </tr>
         <tr>
-            <td>Technology</td>
-            <td>Java, JSP, Servlet, Maven</td>
+            <td>Technology Stack</td>
+            <td>Java, JSP, Maven, Apache Tomcat</td>
+        </tr>
+        <tr>
+            <td>Deployment Status</td>
+            <td>Running Successfully ✅</td>
         </tr>
         <tr>
             <td>Build Tool</td>
             <td>Apache Maven</td>
         </tr>
         <tr>
-            <td>Server</td>
-            <td>Apache Tomcat</td>
-        </tr>
-        <tr>
-            <td>Status</td>
-            <td>Running Successfully ✅</td>
-        </tr>
-        <tr>
-            <td>Current Date & Time</td>
+            <td>Current Time</td>
             <td><%= new java.util.Date() %></td>
         </tr>
     </table>
 
-    <h2>Server Details</h2>
+    <h2>Server Information</h2>
+
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Java Version</td>
+            <td><%= System.getProperty("java.version") %></td>
+        </tr>
+        <tr>
+            <td>Operating System</td>
+            <td><%= System.getProperty("os.name") %></td>
+        </tr>
+        <tr>
+            <td>Server User</td>
+            <td><%= System.getProperty("user.name") %></td>
+        </tr>
+        <tr>
+            <td>Context Path</td>
+            <td><%= request.getContextPath() %></td>
+        </tr>
+        <tr>
+            <td>HTTP Method</td>
+            <td><%= request.getMethod() %></td>
+        </tr>
+        <tr>
+            <td>Client IP</td>
+            <td><%= request.getRemoteAddr() %></td>
+        </tr>
+    </table>
+
+    <h2>CI/CD Status</h2>
 
     <ul>
-        <li><strong>Java Version:</strong> <%= System.getProperty("java.version") %></li>
-        <li><strong>Operating System:</strong> <%= System.getProperty("os.name") %></li>
-        <li><strong>User:</strong> <%= System.getProperty("user.name") %></li>
-        <li><strong>Context Path:</strong> <%= request.getContextPath() %></li>
-        <li><strong>Request Method:</strong> <%= request.getMethod() %></li>
-        <li><strong>Client IP:</strong> <%= request.getRemoteAddr() %></li>
+        <li>✔ Source Code: GitHub</li>
+        <li>✔ Build Tool: Maven</li>
+        <li>✔ CI Server: Jenkins</li>
+        <li>✔ Application Server: Apache Tomcat</li>
+        <li>✔ Deployment: Successful</li>
     </ul>
-
-    <h2>About This Project</h2>
-
-    <p>
-        This is a sample Java Maven web application using JSP.
-        It demonstrates successful deployment on an Apache Tomcat server
-        and can be integrated with Jenkins CI/CD pipelines for automated builds.
-    </p>
 
     <div class="footer">
         <hr>
-        <p>
-            Developed using Java • JSP • Maven • Tomcat
-        </p>
+        <p>Developed using Java • JSP • Maven • Jenkins • Apache Tomcat</p>
     </div>
 
 </div>
 
 </body>
 </html>
+```
